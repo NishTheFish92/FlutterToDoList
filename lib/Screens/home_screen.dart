@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:to_do_application/Screens/menu.dart';
 
 class MainTaskScreen extends StatelessWidget {
   const MainTaskScreen({super.key});
@@ -21,7 +23,13 @@ class MainTaskScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/menu');
+            // Navigator.pushNamed(context, '/menu');
+            Navigator.push(
+              context,
+              CupertinoPageRoute(
+                builder: (context) => MenuScreen(),
+              ),
+            );
           },
           icon: Icon(Icons.menu),
         ),
@@ -43,4 +51,27 @@ class MainTaskScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class FadeRoute extends PageRouteBuilder {
+  final Widget page;
+  FadeRoute({required this.page})
+      : super(
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
 }

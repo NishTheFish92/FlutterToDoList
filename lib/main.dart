@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home_screen': (context) => MainTaskScreen(),
         '/menu': (context) => MenuScreen(),
-
       },
     );
   }
 }
-
