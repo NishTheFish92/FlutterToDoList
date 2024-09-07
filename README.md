@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # to_do_application
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# FlutterToDoList
+To-Do list to manage and view tasks and sort according to priority
+>>>>>>> d7cecc148ae6b1d268d738b59696c2944cfe0705
