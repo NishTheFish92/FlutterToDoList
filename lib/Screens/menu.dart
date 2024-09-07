@@ -26,7 +26,7 @@ class MenuScreen extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                const Color.fromARGB(255, 33, 38, 26),
+                const Color.fromARGB(255, 54, 63, 40),
                 const Color.fromARGB(255, 80, 38, 55),
               ],
               stops: [
