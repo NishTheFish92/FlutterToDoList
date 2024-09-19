@@ -15,6 +15,7 @@ class MenuScreen extends StatelessWidget {
           "Options",
           style: TextStyle(
             color: Color.fromARGB(255, 149, 183, 209),
+            fontSize: 50,
           ),
         ),
         iconTheme: IconThemeData(color: Color.fromARGB(255, 149, 183, 209)),

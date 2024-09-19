@@ -12,6 +12,16 @@ class MainTaskScreen extends StatefulWidget {
 }
 
 class _MainTaskScreenState extends State<MainTaskScreen> {
+  List tasklist = [
+    ["Hello World", false],
+    ["Hello World!!", false]
+  ];
+  void clickcheckbox(bool? value, int index) {
+    setState(() {
+      tasklist[index][1] = !tasklist[index][1];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +32,8 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
           "Your Tasks",
           style: TextStyle(
             color: Color.fromARGB(255, 149, 183, 209),
+            fontFamily: "Trench",
+            fontSize: 50,
           ),
         ),
         iconTheme: IconThemeData(color: Color.fromARGB(255, 149, 183, 209)),
@@ -53,24 +65,15 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
                 0.5
               ]),
         ),
-        child: ListView(
-          children: [
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-            ToDoTile(),
-          ],
+        child: ListView.builder(
+          itemCount: tasklist.length,
+          itemBuilder: (context, index) {
+            return ToDoTile(
+              taskName: tasklist[index][0],
+              taskdone: tasklist[index][1],
+              onChanged: (value) => clickcheckbox(value, index),
+            );
+          },
         ),
       ),
     );
