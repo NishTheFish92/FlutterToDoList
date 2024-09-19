@@ -1,12 +1,17 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:to_do_application/Screens/menu.dart';
+import 'package:to_do_application/util/todotile.dart';
 
-class MainTaskScreen extends StatelessWidget {
+class MainTaskScreen extends StatefulWidget {
   const MainTaskScreen({super.key});
 
+  @override
+  State<MainTaskScreen> createState() => _MainTaskScreenState();
+}
+
+class _MainTaskScreenState extends State<MainTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +31,7 @@ class MainTaskScreen extends StatelessWidget {
             // Navigator.pushNamed(context, '/menu');
             Navigator.push(
               context,
-              CupertinoPageRoute(
+              MaterialPageRoute(
                 builder: (context) => MenuScreen(),
               ),
             );
@@ -47,6 +52,25 @@ class MainTaskScreen extends StatelessWidget {
                 0,
                 0.5
               ]),
+        ),
+        child: ListView(
+          children: [
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+            ToDoTile(),
+          ],
         ),
       ),
     );
