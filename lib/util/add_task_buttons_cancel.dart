@@ -12,7 +12,9 @@ class CancelButton extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          minWidth: 200,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(9),
+          ),
           color: Color.fromARGB(255, 22, 65, 89),
           child: Text(
             "Cancel",

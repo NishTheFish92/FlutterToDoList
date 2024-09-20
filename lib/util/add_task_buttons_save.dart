@@ -10,6 +10,9 @@ class SaveButton extends StatelessWidget {
         margin: EdgeInsets.only(left: 10, right: 5, top: 10, bottom: 10),
         child: MaterialButton(
           onPressed: () {},
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(9),
+          ),
           color: Color.fromARGB(255, 22, 65, 89),
           child: Text(
             "Save",
