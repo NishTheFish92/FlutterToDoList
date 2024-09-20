@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:to_do_application/Screens/menu.dart';
+import 'package:to_do_application/util/add_task.dart';
 import 'package:to_do_application/util/todotile.dart';
 
 class MainTaskScreen extends StatefulWidget {
@@ -22,6 +23,18 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
     });
   }
 
+  void createTask() {
+    showModalBottomSheet(
+        isScrollControlled: false,
+        context: context,
+        builder: (context) => Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: DrawerContent(),
+            ),
+        backgroundColor: Color.fromRGBO(39, 39, 39, 140));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +46,8 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
           style: TextStyle(
             color: Color.fromARGB(255, 149, 183, 209),
             fontFamily: "Trench",
-            fontSize: 50,
+            fontSize: 42,
+            fontWeight: FontWeight.bold,
           ),
         ),
         iconTheme: IconThemeData(color: Color.fromARGB(255, 149, 183, 209)),
@@ -48,7 +62,17 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
               ),
             );
           },
-          icon: Icon(Icons.menu),
+          icon: Icon(
+            Icons.menu,
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: createTask,
+        backgroundColor: Color.fromARGB(255, 22, 65, 89),
+        child: Icon(
+          Icons.add,
+          color: Color.fromARGB(255, 149, 183, 209),
         ),
       ),
       body: Container(
