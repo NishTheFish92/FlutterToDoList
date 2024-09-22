@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:to_do_application/util/menuoption.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -35,6 +36,34 @@ class MenuScreen extends StatelessWidget {
                 0,
                 0.5
               ]),
+        ),
+        child: ListView(
+          children: [
+            Menuoption(
+              optionicon: Icons.home,
+              optiontext: "Home Page",
+            ),
+            Menuoption(
+              optionicon: Icons.battery_2_bar,
+              optiontext: "U & I",
+            ),
+            Menuoption(
+              optionicon: Icons.battery_4_bar,
+              optiontext: "U & NI",
+            ),
+            Menuoption(
+              optionicon: Icons.battery_6_bar,
+              optiontext: "NU & I",
+            ),
+            Menuoption(
+              optionicon: Icons.battery_full,
+              optiontext: "NU & NI",
+            ),
+            Menuoption(
+              optionicon: Icons.format_paint_rounded,
+              optiontext: "Theme",
+            ),
+          ],
         ),
       ),
     );
