@@ -1,11 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:to_do_application/util/add_task_buttons_cancel.dart';
-import 'package:to_do_application/util/add_task_buttons_save.dart';
+import 'package:to_do_application/util/MyButton.dart';
 
 class DrawerContent extends StatelessWidget {
-  const DrawerContent({super.key});
-
+  final TextEditingController? controller;
+  VoidCallback onsave;
+  DrawerContent({
+    super.key,
+    required this.controller,
+    required this.onsave
+  });
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,6 +18,7 @@ class DrawerContent extends StatelessWidget {
         Container(
           margin: EdgeInsets.all(10),
           child: TextField(
+            controller: controller,
             style: TextStyle(
               color: Color.fromARGB(255, 149, 183, 209),
             ),
@@ -34,9 +39,17 @@ class DrawerContent extends StatelessWidget {
           ),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            SaveButton(),
-            CancelButton(),
+            //SaveButton(),
+            //CancelButton(),
+            Mybutton(text: "Save", onPressed: onsave),
+            Mybutton(
+                text: "Cancel",
+                onPressed: () {
+                  Navigator.pop(context);
+                })
           ],
         )
       ],

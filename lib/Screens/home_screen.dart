@@ -13,14 +13,25 @@ class MainTaskScreen extends StatefulWidget {
 }
 
 class _MainTaskScreenState extends State<MainTaskScreen> {
+  final _controller = TextEditingController();
+
   List tasklist = [
     ["Hello World", false],
     ["Hello World!!", false]
   ];
+
   void clickcheckbox(bool? value, int index) {
     setState(() {
       tasklist[index][1] = !tasklist[index][1];
     });
+  }
+
+  void savetask() {
+    setState(() {
+      tasklist.add([_controller.text, false]);
+      _controller.clear();
+    });
+    Navigator.pop(context);
   }
 
   void createTask() {
@@ -30,7 +41,10 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
         builder: (context) => Padding(
               padding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: DrawerContent(),
+              child: DrawerContent(
+                controller: _controller,
+                onsave: savetask,
+              ),
             ),
         backgroundColor: Color.fromRGBO(39, 39, 39, 140));
   }
