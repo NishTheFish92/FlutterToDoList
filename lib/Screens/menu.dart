@@ -3,11 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_application/util/menuoption.dart';
 
-class MenuScreen extends StatelessWidget {
+class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
 
   @override
+  State<MenuScreen> createState() => _MenuScreenState();
+}
+
+class _MenuScreenState extends State<MenuScreen> {
+  @override
+  
   Widget build(BuildContext context) {
+    setState(() {
+      
+    });
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -42,22 +51,27 @@ class MenuScreen extends StatelessWidget {
             Menuoption(
               optionicon: Icons.home,
               optiontext: "Home Page",
+              onclick: () {},
             ),
             Menuoption(
-              optionicon: Icons.home,
+              optionicon: Icons.check,
               optiontext: "Completed Tasks",
+              onclick: () {},
             ),
             Menuoption(
-              optionicon: Icons.home,
+              optionicon: Icons.access_time,
               optiontext: "Pending Tasks",
+              onclick: () {},
             ),
             Menuoption(
               optionicon: Icons.format_paint_rounded,
               optiontext: "Theme",
+              onclick: () {},
             ),
             Menuoption(
               optionicon: Icons.info,
               optiontext: "About",
+              onclick: () {},
             ),
           ],
         ),

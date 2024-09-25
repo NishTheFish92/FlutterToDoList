@@ -26,6 +26,12 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
     });
   }
 
+  void deletetask(int index) {
+    setState(() {
+      tasklist.removeAt(index);
+    });
+  }
+
   void savetask() {
     setState(() {
       tasklist.add([_controller.text, false]);
@@ -110,6 +116,7 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
               taskName: tasklist[index][0],
               taskdone: tasklist[index][1],
               onChanged: (value) => clickcheckbox(value, index),
+              deletefunction: (context) => deletetask(index),
             );
           },
         ),
