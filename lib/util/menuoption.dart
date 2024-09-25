@@ -17,8 +17,8 @@ class Menuoption extends StatelessWidget {
   Widget build(BuildContext context) {
     return Animate(
       effects: [
-        SlideEffect(),
-        FadeEffect(duration: Duration(milliseconds: 400))
+        SlideEffect(curve: Curves.easeInBack),
+        FadeEffect(duration: Duration(milliseconds: 400)),
       ],
       child: GestureDetector(
         onTap: onclick,
@@ -41,13 +41,11 @@ class Menuoption extends StatelessWidget {
                     margin: const EdgeInsets.only(
                       left: 15,
                     ),
-                    child: Flexible(
-                      child: Text(
-                        optiontext,
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 149, 183, 209),
-                          fontSize: 36,
-                        ),
+                    child: Text(
+                      optiontext,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 149, 183, 209),
+                        fontSize: 36,
                       ),
                     ),
                   )
