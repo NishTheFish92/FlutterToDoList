@@ -44,24 +44,20 @@ class MenuScreen extends StatelessWidget {
               optiontext: "Home Page",
             ),
             Menuoption(
-              optionicon: Icons.battery_2_bar,
-              optiontext: "U & I",
+              optionicon: Icons.home,
+              optiontext: "Completed Tasks",
             ),
             Menuoption(
-              optionicon: Icons.battery_4_bar,
-              optiontext: "U & NI",
-            ),
-            Menuoption(
-              optionicon: Icons.battery_6_bar,
-              optiontext: "NU & I",
-            ),
-            Menuoption(
-              optionicon: Icons.battery_full,
-              optiontext: "NU & NI",
+              optionicon: Icons.home,
+              optiontext: "Pending Tasks",
             ),
             Menuoption(
               optionicon: Icons.format_paint_rounded,
               optiontext: "Theme",
+            ),
+            Menuoption(
+              optionicon: Icons.info,
+              optiontext: "About",
             ),
           ],
         ),
