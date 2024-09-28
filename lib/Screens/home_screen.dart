@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:to_do_application/Screens/menu.dart';
+import 'package:to_do_application/data/database.dart';
 import 'package:to_do_application/util/add_task.dart';
 import 'package:to_do_application/util/to_do_tile.dart';
 
@@ -13,30 +15,43 @@ class MainTaskScreen extends StatefulWidget {
 }
 
 class _MainTaskScreenState extends State<MainTaskScreen> {
+  ToDoDatabase db = ToDoDatabase();
+  final taskbox = Hive.box('mybox');
+
+
+  @override
+  void initState() {
+    if (taskbox.get("Todo") == null) {
+      db.createInitialData();
+    } else {
+      db.loadData();
+    }
+
+
+    super.initState();
+  }
+
   final _controller = TextEditingController();
-
-  List tasklist = [
-    ["Hello World", false],
-    ["Hello World!!", false]
-  ];
-
   void clickcheckbox(bool? value, int index) {
     setState(() {
-      tasklist[index][1] = !tasklist[index][1];
+      db.toDoList[index][1] = !db.toDoList[index][1];
     });
+    db.updatedata();
   }
 
   void deletetask(int index) {
     setState(() {
-      tasklist.removeAt(index);
+      db.toDoList.removeAt(index);
     });
+    db.updatedata();
   }
 
   void savetask() {
     setState(() {
-      tasklist.add([_controller.text, false]);
+      db.toDoList.add([_controller.text, false]);
       _controller.clear();
     });
+    db.updatedata();
     Navigator.pop(context);
   }
 
@@ -110,11 +125,11 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
               ]),
         ),
         child: ListView.builder(
-          itemCount: tasklist.length,
+          itemCount: db.toDoList.length,
           itemBuilder: (context, index) {
             return ToDoTile(
-              taskName: tasklist[index][0],
-              taskdone: tasklist[index][1],
+              taskName: db.toDoList[index][0],
+              taskdone: db.toDoList[index][1],
               onChanged: (value) => clickcheckbox(value, index),
               deletefunction: (context) => deletetask(index),
             );

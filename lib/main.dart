@@ -2,8 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_application/Screens/home_screen.dart';
 import 'package:to_do_application/Screens/menu.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  var box = await Hive.openBox('mybox');
   runApp(const MyApp());
 }
 
@@ -14,7 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: "Trench",),
+      theme: ThemeData(
+        fontFamily: "Trench",
+      ),
       debugShowCheckedModeBanner: false,
       home: MainTaskScreen(),
       routes: {

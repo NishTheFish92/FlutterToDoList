@@ -5,11 +5,7 @@ import 'package:to_do_application/util/mybutton.dart';
 class DrawerContent extends StatelessWidget {
   final TextEditingController? controller;
   VoidCallback onsave;
-  DrawerContent({
-    super.key,
-    required this.controller,
-    required this.onsave
-  });
+  DrawerContent({super.key, required this.controller, required this.onsave});
   @override
   Widget build(BuildContext context) {
     return Column(
