@@ -18,7 +18,6 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
   ToDoDatabase db = ToDoDatabase();
   final taskbox = Hive.box('mybox');
 
-
   @override
   void initState() {
     if (taskbox.get("Todo") == null) {
@@ -26,7 +25,6 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
     } else {
       db.loadData();
     }
-
 
     super.initState();
   }
@@ -67,7 +65,7 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
                 onsave: savetask,
               ),
             ),
-        backgroundColor: Color.fromRGBO(39, 39, 39, 140));
+        backgroundColor: Color.fromRGBO(18, 18, 18, 1));
   }
 
   @override
@@ -79,13 +77,16 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
         title: Text(
           "Your Tasks",
           style: TextStyle(
-            color: Color.fromARGB(255, 149, 183, 209),
+            //color: Color.fromARGB(255, 149, 183, 209),
+            color: Colors.white,
             fontFamily: "Trench",
             fontSize: 42,
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: IconThemeData(color: Color.fromARGB(255, 149, 183, 209)),
+        iconTheme: IconThemeData(
+            //color: Color.fromARGB(255, 149, 183, 209
+            color: Colors.white),
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {
@@ -107,7 +108,8 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
         backgroundColor: Color.fromARGB(255, 22, 65, 89),
         child: Icon(
           Icons.add,
-          color: Color.fromARGB(255, 149, 183, 209),
+          //color: Color.fromARGB(255, 149, 183, 209),
+          color: Colors.white,
         ),
       ),
       body: Container(
@@ -117,11 +119,12 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
               end: Alignment.bottomCenter,
               colors: [
                 const Color.fromARGB(255, 22, 65, 89),
-                const Color.fromARGB(255, 80, 38, 55),
+                //const Color.fromARGB(255, 80, 38, 55),
+                const Color.fromARGB(255, 6, 76, 55)
               ],
               stops: [
                 0,
-                0.5
+                0.6
               ]),
         ),
         child: ListView.builder(

@@ -38,7 +38,7 @@ class ToDoTile extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-                color: Color.fromRGBO(39, 39, 39, 140),
+                color: Color.fromRGBO(39, 39, 39, 40),
                 borderRadius: BorderRadius.circular(8)),
             child: Row(children: [
               Checkbox(
@@ -50,8 +50,9 @@ class ToDoTile extends StatelessWidget {
                 child: Text(
                   taskName,
                   style: TextStyle(
-                      color: Color.fromARGB(255, 149, 183, 209),
-                      fontSize: 35,
+                      //color: Color.fromARGB(255, 149, 183, 209),
+                      color: Colors.white,
+                      fontSize: 28,
                       decoration: taskdone
                           ? TextDecoration.lineThrough
                           : TextDecoration.none),

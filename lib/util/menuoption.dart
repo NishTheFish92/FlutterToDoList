@@ -28,14 +28,14 @@ class Menuoption extends StatelessWidget {
           child: Container(
               padding: EdgeInsets.all(30),
               decoration: BoxDecoration(
-                  color: Color.fromRGBO(39, 39, 39, 75),
+                  color: Color.fromRGBO(39, 39, 39, 40),
                   borderRadius: BorderRadius.circular(18)),
               child: Row(
                 children: [
                   Icon(
                     optionicon,
                     size: 47,
-                    color: Color.fromARGB(255, 149, 183, 209),
+                    color: Colors.white,
                   ),
                   Container(
                     margin: const EdgeInsets.only(
@@ -44,7 +44,7 @@ class Menuoption extends StatelessWidget {
                     child: Text(
                       optiontext,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 149, 183, 209),
+                        color: Colors.white,
                         fontSize: 36,
                       ),
                     ),

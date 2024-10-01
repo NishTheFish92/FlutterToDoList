@@ -16,7 +16,7 @@ class DrawerContent extends StatelessWidget {
           child: TextField(
             controller: controller,
             style: TextStyle(
-              color: Color.fromARGB(255, 149, 183, 209),
+              color: Colors.white,
             ),
             decoration: InputDecoration(
               border: OutlineInputBorder(
@@ -29,7 +29,7 @@ class DrawerContent extends StatelessWidget {
               ),
               hintText: "Add a new task",
               hintStyle: TextStyle(
-                color: Color.fromARGB(255, 149, 183, 209),
+                color: Colors.white,
               ),
             ),
           ),

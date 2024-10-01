@@ -15,12 +15,12 @@ class MenuScreen extends StatelessWidget {
         title: Text(
           "Options",
           style: TextStyle(
-            color: Color.fromARGB(255, 149, 183, 209),
+            color: Colors.white,
             fontSize: 42,
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: IconThemeData(color: Color.fromARGB(255, 149, 183, 209)),
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.transparent,
       ),
       body: Container(
@@ -29,8 +29,9 @@ class MenuScreen extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                const Color.fromARGB(255, 54, 63, 40),
-                const Color.fromARGB(255, 80, 38, 55),
+                //const Color.fromARGB(255, 46, 52, 37),
+                const Color.fromARGB(255, 6, 76, 55),
+                const Color.fromARGB(255, 22, 65, 89),
               ],
               stops: [
                 0,
