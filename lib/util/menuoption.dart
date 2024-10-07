@@ -37,15 +37,17 @@ class Menuoption extends StatelessWidget {
                     size: 47,
                     color: Colors.white,
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      left: 15,
-                    ),
-                    child: Text(
-                      optiontext,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 36,
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(
+                        left: 15,
+                      ),
+                      child: Text(
+                        optiontext,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 36,
+                        ),
                       ),
                     ),
                   )
