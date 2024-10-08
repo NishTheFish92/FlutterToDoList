@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:to_do_application/Screens/aboutapp.dart';
 import 'package:to_do_application/Screens/home_screen.dart';
 import 'package:to_do_application/Screens/themepage.dart';
 import 'package:to_do_application/util/menuoption.dart';
@@ -43,8 +44,8 @@ class MenuScreen extends StatelessWidget {
         child: ListView(
           children: [
             Menuoption(
-              optionicon: Icons.home,
-              optiontext: "Home Page",
+              optionicon: Icons.check,
+              optiontext: "Your Tasks",
               onclick: () {
                 Navigator.push(
                   context,
@@ -69,7 +70,14 @@ class MenuScreen extends StatelessWidget {
             Menuoption(
               optionicon: Icons.info,
               optiontext: "About",
-              onclick: () {},
+              onclick: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => About(),
+                  ),
+                );
+              },
             ),
           ],
         ),

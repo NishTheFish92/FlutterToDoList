@@ -4,8 +4,12 @@ import 'package:to_do_application/util/mybutton.dart';
 
 class DrawerContent extends StatelessWidget {
   final TextEditingController? controller;
-  VoidCallback onsave;
-  DrawerContent({super.key, required this.controller, required this.onsave});
+  VoidCallback onsave, oncancel;
+  DrawerContent(
+      {super.key,
+      required this.controller,
+      required this.onsave,
+      required this.oncancel});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,14 +42,8 @@ class DrawerContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            //SaveButton(),
-            //CancelButton(),
             Mybutton(text: "Save", onPressed: onsave),
-            Mybutton(
-                text: "Cancel",
-                onPressed: () {
-                  Navigator.pop(context);
-                })
+            Mybutton(text: "Cancel", onPressed: oncancel)
           ],
         )
       ],

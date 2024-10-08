@@ -53,6 +53,13 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
     Navigator.pop(context);
   }
 
+  void canceltask() {
+    setState(() {
+      _controller.clear();
+      Navigator.pop(context);
+    });
+  }
+
   void createTask() {
     showModalBottomSheet(
         isScrollControlled: false,
@@ -63,6 +70,7 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
               child: DrawerContent(
                 controller: _controller,
                 onsave: savetask,
+                oncancel: canceltask,
               ),
             ),
         backgroundColor: Color.fromRGBO(18, 18, 18, 1));
