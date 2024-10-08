@@ -26,6 +26,7 @@ class Menuoption extends StatelessWidget {
           padding:
               const EdgeInsets.only(left: 13, right: 13, top: 14, bottom: 0),
           child: Container(
+              height: MediaQuery.of(context).size.width * 0.30,
               padding: EdgeInsets.all(30),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(39, 39, 39, 40),
@@ -38,15 +39,19 @@ class Menuoption extends StatelessWidget {
                     color: Colors.white,
                   ),
                   Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(
-                        left: 15,
-                      ),
-                      child: Text(
-                        optiontext,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
+                    child: FittedBox(
+                      alignment: Alignment.centerLeft,
+                      fit: BoxFit.scaleDown,
+                      child: Container(
+                        margin: const EdgeInsets.only(
+                          left: 15,
+                        ),
+                        child: Text(
+                          optiontext,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                          ),
                         ),
                       ),
                     ),
