@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:to_do_application/Screens/home_screen.dart';
+import 'package:to_do_application/Screens/themepage.dart';
 import 'package:to_do_application/util/menuoption.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -43,22 +45,36 @@ class MenuScreen extends StatelessWidget {
             Menuoption(
               optionicon: Icons.home,
               optiontext: "Home Page",
-              onclick: () {},
+              onclick: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainTaskScreen(),
+                  ),
+                );
+              },
             ),
-            Menuoption(
-              optionicon: Icons.check,
-              optiontext: "Completed Tasks",
-              onclick: () {},
-            ),
-            Menuoption(
-              optionicon: Icons.access_time,
-              optiontext: "Pending Tasks",
-              onclick: () {},
-            ),
+            // Menuoption(
+            //   optionicon: Icons.check,
+            //   optiontext: "Completed Tasks",
+            //   onclick: () {},
+            // ),
+            // Menuoption(
+            //   optionicon: Icons.access_time,
+            //   optiontext: "Pending Tasks",
+            //   onclick: () {},
+            // ),
             Menuoption(
               optionicon: Icons.format_paint_rounded,
               optiontext: "Theme",
-              onclick: () {},
+              onclick: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Themepage(),
+                  ),
+                );
+              },
             ),
             Menuoption(
               optionicon: Icons.info,
