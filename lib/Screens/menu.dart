@@ -54,16 +54,6 @@ class MenuScreen extends StatelessWidget {
                 );
               },
             ),
-            // Menuoption(
-            //   optionicon: Icons.check,
-            //   optiontext: "Completed Tasks",
-            //   onclick: () {},
-            // ),
-            // Menuoption(
-            //   optionicon: Icons.access_time,
-            //   optiontext: "Pending Tasks",
-            //   onclick: () {},
-            // ),
             Menuoption(
               optionicon: Icons.format_paint_rounded,
               optiontext: "Theme",
