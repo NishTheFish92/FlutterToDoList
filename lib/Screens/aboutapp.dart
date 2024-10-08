@@ -10,7 +10,7 @@ class About extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "About This App",
+          "About App",
           style: TextStyle(
             color: Colors.white,
             fontSize: 42,
@@ -37,9 +37,9 @@ class About extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(18),
+            Padding(
+              padding: const EdgeInsets.all(18),
+              child: Expanded(
                 child: Text(
                   textAlign: TextAlign.center,
                   "Text goes here",
