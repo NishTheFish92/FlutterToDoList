@@ -1,4 +1,5 @@
 # ToDo Application Using Flutter
+My First project using Flutter!
 A To Do application built using flutter, supports all basic functionality.
 Supports
 - Task creation
