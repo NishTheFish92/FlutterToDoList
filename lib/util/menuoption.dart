@@ -16,7 +16,7 @@ class Menuoption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Animate(
-      effects: [
+      effects: const [
         SlideEffect(curve: Curves.easeInBack),
         FadeEffect(duration: Duration(milliseconds: 400)),
       ],
@@ -27,9 +27,9 @@ class Menuoption extends StatelessWidget {
               const EdgeInsets.only(left: 13, right: 13, top: 14, bottom: 0),
           child: Container(
               height: MediaQuery.of(context).size.width * 0.30,
-              padding: EdgeInsets.all(30),
+              padding: const EdgeInsets.all(30),
               decoration: BoxDecoration(
-                  color: Color.fromRGBO(39, 39, 39, 40),
+                  color: const Color.fromRGBO(39, 39, 39, 40),
                   borderRadius: BorderRadius.circular(18)),
               child: Row(
                 children: [
@@ -48,7 +48,7 @@ class Menuoption extends StatelessWidget {
                         ),
                         child: Text(
                           optiontext,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 36,
                           ),

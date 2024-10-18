@@ -14,10 +14,10 @@ class Mybutton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(9),
         ),
-        color: Color.fromARGB(255, 22, 65, 89),
+        color: const Color.fromARGB(255, 22, 65, 89),
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color.fromARGB(255, 149, 183, 209),
             fontSize: 17,
           ),

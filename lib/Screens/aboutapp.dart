@@ -9,7 +9,7 @@ class About extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "About App",
           style: TextStyle(
             color: Colors.white,
@@ -17,18 +17,18 @@ class About extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.transparent,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
                 //const Color.fromARGB(255, 46, 52, 37),
-                const Color.fromARGB(255, 22, 65, 89),
-                const Color.fromARGB(255, 6, 76, 55),
+                Color.fromARGB(255, 22, 65, 89),
+                Color.fromARGB(255, 6, 76, 55),
               ],
               stops: [
                 0,
@@ -36,14 +36,14 @@ class About extends StatelessWidget {
               ]),
         ),
         child: ListView(
-          children: [
+          children: const [
             Padding(
-              padding: const EdgeInsets.all(18),
+              padding: EdgeInsets.all(18),
               child: Expanded(
                 child: Text(
                   textAlign: TextAlign.center,
-                  "Text goes here",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  "This app was made as a beginner project for me to learn the basics of flutter and see how app development is. I would say this is a decent first project to work on and I am satisfied with the result.",
+                  style: TextStyle(fontSize: 30, color: Colors.white),
                 ),
               ),
             ),
