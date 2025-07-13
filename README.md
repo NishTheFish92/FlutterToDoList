@@ -7,7 +7,7 @@ Supports these features
 - Task persistence
 ## Installation Guide
 1) Install the APK from ![here](https://github.com/NishTheFish92/FlutterToDoList/releases/tag/NishToDov1), run app-arm64-v8a-release.apk using an android emulator or any android mobile device.
-2) - Clone this repo locally by running ```https://github.com/NishTheFish92/FlutterToDoList.git``` in cmd in your desired directory
+2) - Clone this repo locally by running ```git clone https://github.com/NishTheFish92/FlutterToDoList.git``` in cmd in your desired directory
    - Run ```lib\main.dart``` without debugging while running android emulator.
 ## Photos
 <img src="https://github.com/user-attachments/assets/43dcf4fe-21d8-4f85-9b25-a6657723f4dd" width = "250" height = "600"/><br/>
